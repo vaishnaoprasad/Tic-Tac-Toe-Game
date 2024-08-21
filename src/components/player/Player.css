@@ -1,0 +1,87 @@
+.player {
+    font-family: 'Courier New', Courier, monospace !important;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+}
+
+.player-symbol {
+    font-weight: bold;
+    text-align: center;
+    font-size: 3rem;
+    padding: 0.5rem 1rem;
+    color: white;
+    background: gold;
+    margin: 1rem 0;
+    clip-path: polygon(0% 0%, 100% 0, 100% 80%, 50% 100%, 0 80%);
+}
+
+.player-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #202020;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+.edit-name-input {
+    cursor: text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: white;
+    color: black;
+    border: 2px solid black;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transform: translateY(0.2rem);
+    border-radius: 4px;
+}
+
+.active {
+    animation: active 2s infinite ease-in-out;
+}
+
+.edit-btn {
+    cursor: pointer;
+    font-family: 'Courier New', Courier;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100% !important;
+    padding: 0.5rem 1rem;
+    border: none !important;
+    font-weight: bold;
+    background: dodgerblue;
+    color: white;
+    border-radius: 2px;
+    transition: all 0.2s, color 0.2s;
+}
+
+
+
+@keyframes active {
+    0% {
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+
+    50% {
+        opacity: 80%;
+        transform: translateY(10%);
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+}

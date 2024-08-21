@@ -1,0 +1,22 @@
+#log {
+    width: 100% !important;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #202020;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+#log li{
+    font-family: 'Courier New', Courier;
+    padding: 1rem !important;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}
