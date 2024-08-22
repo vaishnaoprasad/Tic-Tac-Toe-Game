@@ -1,3 +1,4 @@
+import { IonContent, IonHeader } from "@ionic/react";
 import { useState } from "react";
 import "./App.css";
 import Board from "../src/components/board/Board";
@@ -5,6 +6,10 @@ import Player from "../src/components/player/Player";
 import Log from "./components/log/Log";
 import { WINNING_COMBINATIONS } from "./components/winning-cominations";
 import GameOver from "./components/gameover/GameOver";
+
+import { setupIonicReact } from "@ionic/react";
+
+setupIonicReact();
 
 const PLAYERS = {
   X: "Player 1",
@@ -102,25 +107,39 @@ function App() {
   }
 
   return (
-    <main id="main">
-        <div id="players" className="highlight-player">
-          <Player
-            initialName={PLAYERS.X}
-            symbol="X"
-            isActive={activePlayer === "X"}
-            onChangeName={handlePlayerNameChange}
-            />
-          <Player
-            initialName={PLAYERS.O}
-            symbol="O"
-            isActive={activePlayer === "O"}
-            onChangeName={handlePlayerNameChange}
-            />
-        </div>
-         <Board onSelectSquare={handleSelectSquare} board={gameBoard} />
-        <Log turns={gameTurns} />
-            {(winner || hasDraw) && (<GameOver winner={winner} onRestart={handleRematch} />)}
-    </main>
+    <IonContent>
+      <IonHeader id="header">
+        <img id="logo" src="tictactoe-logo.jpeg" alt="logo-not-found" />
+        <label>
+          <small>Let's Play !</small>
+          <h1>TIC TAC TOE</h1>
+        </label>
+      </IonHeader>
+
+      <div id="main">
+
+
+      <div id="players" className="highlight-player">
+        <Player
+          initialName={PLAYERS.X}
+          symbol="X"
+          isActive={activePlayer === "X"}
+          onChangeName={handlePlayerNameChange}
+          />
+        <Player
+          initialName={PLAYERS.O}
+          symbol="O"
+          isActive={activePlayer === "O"}
+          onChangeName={handlePlayerNameChange}
+          />
+      </div>
+      <Board onSelectSquare={handleSelectSquare} board={gameBoard} />
+      <Log turns={gameTurns} />
+      {(winner || hasDraw) && (
+        <GameOver winner={winner} onRestart={handleRematch} />
+      )}
+      </div>
+    </IonContent>
   );
 }
 
