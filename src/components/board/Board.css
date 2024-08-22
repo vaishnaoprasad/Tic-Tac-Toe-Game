@@ -1,31 +1,27 @@
 #game-board {
-    min-width: 100% !important;
     width: 100% !important;
     aspect-ratio: 1/1;
     display: grid;
-    grid-template-columns: repeat(3, 33.33%);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     align-items: center;
     justify-content: center;
-    gap: 5px;
 }
 
 .board-btn {
     font-family: 'Courier New', Courier, monospace !important;
-    margin: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    grid-column: span 1;
-    width: 100%;
+    width: 100% !important;
     aspect-ratio: 1/1;
     background: white;
     color: silver !important;
     font-weight: bolder;
     font-size: 5rem;
-    opacity: 80%;
     font-style: normal;
+    border: 1px dashed #ccc;
 }
 
 .board-btn:hover {
